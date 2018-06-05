@@ -1,0 +1,187 @@
+{% load static %}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cine Pasto</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'cine/bootstrap.css' %}" />
+<!-- Custom Theme files -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'cine/style.css' %}" />
+<!-- Custom Theme files -->
+
+
+<script src="{% static 'cine/js/jquery.min.js' %}"></script>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Cinema Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- header-section-starts -->
+	<div class="full">
+			<div class="menu">
+				<ul>
+					<li><a class="active" href=""><i class="home"></i></a></li>
+					<li><a href="pelicula/videos"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+					<li><a href="pelicula/funcion"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
+					<li><a href="pelicula/confiteria"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></a></li>
+					<li><a href="pelicula/contacto"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
+				</ul>
+			</div>
+		<div class="main">
+		<div class="header" >
+			<div class="top-header">
+				<div class="logo">
+					<a href=""><img src="{% static 'cine/images/logo.png' %}" alt="" /></a>
+					<p>Cine Pasto</p>
+				</div>
+						<div id="navbar" class="navbar-collapse collapse">	
+									<ul class="nav navbar-nav navbar-right">
+											{% if  request.user.is_authenticated %}
+											<li><a href="{% url  'auth_logout'%}">Salir</a></li>
+            								{% else %}
+            								<li><a href="{% url  'registration_register'%}">Registrar</a></li>
+            								<li ><a href="{% url  'auth_login'%}">Login <span class="sr-only">(current)</span></a></li>
+											{% endif %}
+										{% if not request.user.is_authenticated %}
+									</ul>
+										{% endif %}
+								</div>
+				<div class="clearfix" ></div>
+			</div>
+			<div class="header-info"   >
+					
+				<h1>ESTRENO</h1>
+				
+				<p class="age"><a href="#">Familiar</a> Los Increíbles 2</p>
+				<p class="review reviewgo">Genero  &nbsp;&nbsp;&nbsp;   : &nbsp;&nbsp; Aventuras</p>
+				<p class="review">Estreno &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp; 15 de junio de 2018</p>
+				<p class="special">Dirigida por Brad Bird, creador de la
+					 película- Ratatouille, Los Increíbles y El gigante de Hierro</p>
+				<a class="video" href="https://www.youtube.com/embed/8UwxL-Zheqk"><i class="video1"></i>MIRAR TRAILER</a>
+				
+			</div>
+		</div>
+		<div class="review-slider">    
+			 <ul id="flexiselDemo1">
+                    {% for p in object_list.all %}
+                    <li><a href="pelicula/videos"><img src="{% static p.photo.url %}" width="140" height="220" alt=""/> </a></li>  
+			{% endfor %}
+        </ul>
+        
+			<script type="text/javascript">
+		$(window).load(function() {
+			
+		  $("#flexiselDemo1").flexisel({
+				visibleItems: 6,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: false,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: { 
+					portrait: { 
+						changePoint:480,
+						visibleItems: 2
+					}, 
+					landscape: { 
+						changePoint:640,
+						visibleItems: 3
+					},
+					tablet: { 
+						changePoint:768,
+						visibleItems: 4
+					}
+				}
+			});
+			});
+		</script>
+		<script type="text/javascript" src="{% static 'cine/js/jquery.flexisel.js' %}"></script>	
+		</div>
+		<div class="video">
+			
+			<iframe  src="https://www.youtube.com/embed/nZ8FXOpcXSs" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="news">
+			<div class="col-md-6 news-left-grid">
+				<h3>Trailers</h3>
+				<h2>Peliculas</h2>
+				<h4>Estrenos</h4>
+				<a href="pelicula/confiteria"><i class="book"></i>Confiteria</a>
+				
+			</div>
+			<div class="col-md-6 news-right-grid">
+				<h3>Proximos estrenos</h3>
+				<div class="news-grid">
+					<h5>Jurassic World: El reino caído</h5>
+					<h4>7 de junio de 2018</h4>
+					
+					<p>Han pasado cuatro años desde que el parque de atracciones y centro vacacional de lujo Jurassic World fue destruido por los dinosaurios. La Isla Nublar está ahora abandonada por los humanos, mientras los dinosaurios intentan sobrevivir por si mismos en la jungla. Cuando el volcán durmiente de la isla vuelve a la vida, Owen Grady (Chris Pratt) y Claire...</p>
+				</div>
+				<div class="news-grid">
+					<h5>Venom</h5>
+					<h4>5 de octubre de 2018</h4>
+					
+					<p>Eddie Brock (Tom Hardy) es un consolidado periodista y astuto reportero que está investigando una empresa llamada Fundación Vida. Esta fundación, dirigida por el eminente científico Carlton Drake (Riz Ahmed), está ejecutando secretamente experimentos ilegales en seres humanos y realizando pruebas que involucran formas de vida extraterrestres y amorfas conocidas como simbiontes. Durante una visita furtiva a la central, el periodista quedará infectado por un simbionte. Comenzará entonces a experimentar cambios en su cuerpo que no entiende, y escuchará una voz interior, la del simbionte Venom, que le dirá lo que tiene que hacer. Cuando Brock adquiera los poderes del simbionte que le usa como huésped, Venom tomará posesión de su cuerpo, convirtiéndole en un despiadado y peligroso súpervillano.</p>
+				</div>
+				
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="more-reviews">
+			 <ul id="flexiselDemo2">
+
+					{% for p in object_list.all %}
+                    <li><a href="pelicula/funcion"><img src="{% static p.photo.url %}" width="210" height="312" alt=""/> </a></li>  
+			
+			{% endfor %}
+				 
+			
+		</ul>
+			<script type="text/javascript">
+		$(window).load(function() {
+			
+		  $("#flexiselDemo2").flexisel({
+				visibleItems: 4,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: false,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: { 
+					portrait: { 
+						changePoint:480,
+						visibleItems: 2
+					}, 
+					landscape: { 
+						changePoint:640,
+						visibleItems: 3
+					},
+					tablet: { 
+						changePoint:768,
+						visibleItems: 3
+					}
+				}
+			});
+			});
+		</script>
+		<script type="text/javascript" src="{% static 'cine/js/jquery.flexisel.js' %}"></script>	
+		</div>	
+	
+	</div>	
+	</div>
+	</div>
+	<div class="clearfix"></div>
+</body>
+</html>
